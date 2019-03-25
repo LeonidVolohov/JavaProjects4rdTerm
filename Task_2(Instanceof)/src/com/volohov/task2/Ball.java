@@ -2,15 +2,23 @@ package com.volohov.task2;
 
 public class Ball implements Toy {
 
-    static double price;
-    static String value;
+    private double price;
+    private String value;
+
+    public String whoAmI() {
+        return this.getClass().getSimpleName();
+    }
 
     public void play() {
-        System.out.println("The ball is jumping");
+        System.out.println("The " + whoAmI() + " is jumping");
     }
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 
     public double getPrice() {
@@ -21,10 +29,12 @@ public class Ball implements Toy {
         this.price = price;
     }
 
+    public Ball() {}
+
     public Ball(double price, String value) {
         this.play();
         this.setPrice(price);
         this.setValue(value);
-        System.out.println("Price = " + price + " " + value);
+        System.out.println("Price = " + this.getPrice() + " " + this.getValue());
     }
 }

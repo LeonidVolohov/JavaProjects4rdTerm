@@ -2,11 +2,15 @@ package com.volohov.task2;
 
 public class Sandwich implements Eat{
 
-    private static double price;
-    private static String value;
+    private double price;
+    private String value;
+
+    public String whoAmI() {
+        return this.getClass().getSimpleName();
+    }
 
     public void eating(){
-        System.out.println("I`m eating sandwidch");
+        System.out.println("I`m eating " + whoAmI());
     }
 
     public void setPrice(double price) {
@@ -21,12 +25,16 @@ public class Sandwich implements Eat{
         this.value = value;
     }
 
+    public String getValue() {
+        return value;
+    }
+
     public Sandwich() {}
 
     public Sandwich(double price, String value) {
         this.eating();
         this.setPrice(price);
         this.setValue(value);
-        System.out.println("Price = " + price + " " + value);
+        System.out.println("Price = " + this.getPrice() + " " + this.getValue());
     }
 }

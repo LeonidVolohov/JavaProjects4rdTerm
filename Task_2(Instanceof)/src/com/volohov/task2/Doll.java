@@ -2,11 +2,15 @@ package com.volohov.task2;
 
 public class Doll implements Toy {
 
-    static String value;
-    static double price;
+    private String value;
+    private double price;
+
+    public String whoAmI() {
+        return this.getClass().getSimpleName();
+    }
 
     public void play() {
-        System.out.println("I`m playing with doll");
+        System.out.println("I`m playing with " + whoAmI());
     }
 
     public void setValue(String value) {

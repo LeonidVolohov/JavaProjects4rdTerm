@@ -2,8 +2,16 @@ package com.volohov.task2;
 
 public class Yurta implements House {
 
-    private static String value;
-    private static double price;
+    private String value;
+    private double price;
+
+    public String whoAmI() {
+        return this.getClass().getSimpleName();
+    }
+
+    public void living() {
+        System.out.println("This is " + whoAmI());
+    }
 
     public double getPrice() {
         return price;
@@ -13,18 +21,20 @@ public class Yurta implements House {
         this.price = price;
     }
 
-    public void living() {
-        System.out.println("This is yurta");
-    }
-
     public void setValue(String value) {
         this.value= value;
     }
+
+    public String getValue() {
+        return value;
+    }
+
+    public Yurta() {}
 
     public Yurta(double price, String value) {
         this.living();
         this.setPrice(price);
         this.setValue(value);
-        System.out.println("Price = " + price + " " + value);
+        System.out.println("Price = " + this.getPrice() + " " + this.getValue());
     }
 }
